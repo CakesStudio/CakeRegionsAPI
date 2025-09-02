@@ -18,8 +18,8 @@ public class RegionCreateEvent extends Event implements Cancellable {
     private static final HandlerList handlers = new HandlerList();
     private final Player player;
     private final IProtectionBlock IProtectionBlockType;
+    private final IRegion region;
 
-    @Setter private IRegion region;
     @Setter private boolean cancelled;
 
     public RegionCreateEvent(@NonNull final Player player, @NonNull final IRegion region, @NonNull final IProtectionBlock IProtectionBlockType) {

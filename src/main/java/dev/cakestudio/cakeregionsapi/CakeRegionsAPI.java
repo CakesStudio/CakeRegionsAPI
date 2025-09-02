@@ -13,7 +13,7 @@ public final class CakeRegionsAPI extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Bukkit.getConsoleSender().sendMessage("CakeRegionsAPI successfully loaded");
+        Bukkit.getConsoleSender().sendMessage("CakeRegionsAPI successfully enabled");
     }
 
     public static void registerImplementation(@NonNull final IRegionsAPI api) {

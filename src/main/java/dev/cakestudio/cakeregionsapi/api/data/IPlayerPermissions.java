@@ -9,4 +9,8 @@ import java.util.Set;
 public interface IPlayerPermissions {
     boolean hasPermission(@NonNull final RegionPermValue permission);
     @NonNull Set<RegionPermValue> getPermissions();
+
+    void addPermission(@NonNull final RegionPermValue permission);
+    void removePermission(@NonNull final RegionPermValue permission);
+    void togglePermission(@NonNull final RegionPermValue permission);
 }

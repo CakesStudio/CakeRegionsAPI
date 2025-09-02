@@ -18,9 +18,14 @@ public interface IProtectionBlock {
     boolean isGlow();
     boolean isFuelSystemEnabled();
     Set<String> getAccessWorlds();
+    Set<EntityType> getDestroyExplosions();
+    Set<String> getDestroyCustomTnts();
+    boolean isExplosionDropItem();
+    Map<String, String> getNbtData();
 
     IHologramSettings getHologram();
     IDurabilitySettings getDurability();
+    Map<String, IHeightLimit> getHeightLimits();
     IPlacementRules getPlacementRules();
     ICraftData getCraftData();
     IInactiveBreakSettings getInactiveBreak();
@@ -30,6 +35,7 @@ public interface IProtectionBlock {
         boolean isEnabled();
         double getOffsetY();
         int getViewDistance();
+        boolean showToOthers();
         String getHoloName();
         List<String> getLines();
     }
@@ -40,6 +46,7 @@ public interface IProtectionBlock {
         int getMax();
         String getDisableValue();
         Map<EntityType, Integer> getExplosionDamage();
+        Map<String, Integer> getCustomTntDamage();
     }
 
     interface IHeightLimit {

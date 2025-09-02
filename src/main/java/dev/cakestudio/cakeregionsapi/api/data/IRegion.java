@@ -17,12 +17,23 @@ public interface IRegion {
     boolean isActive();
     long getFuelExpiryDate();
     int getDurability();
+
+    void repair(int amount);
+    void damage(int amount);
+    void setDurability(int amount);
+
+    void addFuel(long seconds);
+    void setFuel(long seconds);
+    void removeFuel(long seconds);
+
     boolean isCreator(@NonNull final UUID uuid);
     boolean isOwner(@NonNull final UUID uuid);
     boolean isMember(@NonNull final UUID uuid);
     boolean isFullMember(@NonNull final UUID uuid);
     boolean canBuild(@NonNull final UUID uuid);
+
     @NonNull IProtectionBlock getProtectionBlockType();
     @NonNull ICuboid getCuboid();
     @NonNull IPlayerPermissions getPermissions(@NonNull final UUID uuid);
+    void setPermissions(@NonNull final UUID uuid, @NonNull final IPlayerPermissions permissions);
 }

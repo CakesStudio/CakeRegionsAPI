@@ -16,8 +16,8 @@ public abstract class RegionMemberEvent extends Event implements Cancellable {
 
     private static final HandlerList handlers = new HandlerList();
     private final OfflinePlayer member;
+    private final IRegion region;
 
-    @Setter private IRegion region;
     @Setter private boolean cancelled;
 
     public RegionMemberEvent(@NonNull final IRegion region, @NonNull final OfflinePlayer member) {
