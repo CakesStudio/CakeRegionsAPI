@@ -71,12 +71,12 @@ public interface IProtectionBlock {
     }
 
     interface IRegionActions {
-        Actions getCreate();
-        Actions getBreakByPlayer();
-        Actions getBreakByDurability();
-        Actions getBreakByExplosion();
-        Actions getDurabilityDamage();
-        Actions getDurabilityRepair();
+        IActions getCreate();
+        IActions getBreakByPlayer();
+        IActions getBreakByDurability();
+        IActions getBreakByExplosion();
+        IActions getDurabilityDamage();
+        IActions getDurabilityRepair();
     }
 
 }
