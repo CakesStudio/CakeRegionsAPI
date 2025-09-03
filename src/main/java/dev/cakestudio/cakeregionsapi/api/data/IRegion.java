@@ -14,7 +14,9 @@ public interface IRegion {
     @NonNull Set<UUID> getOwners();
     @NonNull Set<UUID> getMembers();
     @NonNull Set<UUID> getFullMembers();
+    @NonNull String getFormattedCreationDate();
     boolean isActive();
+    long getCreationDate();
     long getFuelExpiryDate();
     int getDurability();
 

@@ -21,6 +21,8 @@ public interface IProtectionBlock {
     Set<EntityType> getDestroyExplosions();
     Set<String> getDestroyCustomTnts();
     boolean isExplosionDropItem();
+    Set<EntityType> getDefaultExplosions();
+    Set<String> getDefaultCustomTnts();
     Map<String, String> getNbtData();
 
     IHologramSettings getHologram();
