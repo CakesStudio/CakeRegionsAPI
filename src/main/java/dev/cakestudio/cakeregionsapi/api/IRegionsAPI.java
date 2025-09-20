@@ -40,7 +40,7 @@ public interface IRegionsAPI {
     Optional<IRegion> createRegion(@NonNull final Player owner, @NonNull final Location location, @NonNull final IProtectionBlock type, @NonNull final ItemStack placedItem);
     void deleteRegion(@NonNull final IRegion region);
     CompletableFuture<Boolean> deleteRegionAndBlockAsync(@NonNull final String regionId, final boolean dropItem);
-    boolean teleportToRegion(@NonNull final Player player, @NonNull final IRegion region);
+    CompletableFuture<Boolean> teleportToRegion(@NonNull final Player player, @NonNull final IRegion region);
 
     @NotNull IPlayerPermissions getPlayerPermissions(@NonNull final IRegion region, @NonNull final OfflinePlayer player);
     boolean addMember(@NonNull final IRegion region, @NonNull final OfflinePlayer target, final boolean bypass);
