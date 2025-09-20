@@ -1,5 +1,5 @@
 name: CakeRegionsAPI
-version: '1.3'
+version: '1.4'
 main: dev.cakestudio.cakeregionsapi.CakeRegionsAPI
 api-version: '1.16'
 folia-supported: true
