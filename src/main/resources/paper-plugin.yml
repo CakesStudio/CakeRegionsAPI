@@ -1,7 +1,7 @@
 name: CakeRegionsAPI
 version: '1.4.1'
 main: dev.cakestudio.cakeregionsapi.CakeRegionsAPI
-api-version: '1.16'
-folia-supported: true
-authors: [CakeStudio]
+api-version: '1.21'
+authors:
+  - CakeStudio
 website: https://dsc.gg/cakestudio
