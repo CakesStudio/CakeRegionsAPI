@@ -17,6 +17,7 @@ public interface IProtectionBlock {
     boolean isPreventMetaModification();
     boolean isGlow();
     boolean isFuelSystemEnabled();
+    int getFuelCreateValue();
     Set<String> getAccessWorlds();
     Set<EntityType> getDestroyExplosions();
     Set<String> getDestroyCustomTnts();

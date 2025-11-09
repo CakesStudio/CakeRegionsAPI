@@ -1,5 +1,5 @@
 name: CakeRegionsAPI
-version: '1.4.1'
+version: '1.4.2'
 main: dev.cakestudio.cakeregionsapi.CakeRegionsAPI
 api-version: '1.21'
 authors:
