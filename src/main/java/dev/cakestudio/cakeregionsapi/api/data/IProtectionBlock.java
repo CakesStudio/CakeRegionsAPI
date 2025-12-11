@@ -33,6 +33,7 @@ public interface IProtectionBlock {
     ICraftData getCraftData();
     IInactiveBreakSettings getInactiveBreak();
     IRegionActions getActions();
+    IRequirements getRequirements();
 
     interface IHologramSettings {
         boolean isEnabled();
@@ -78,6 +79,13 @@ public interface IProtectionBlock {
     interface IInactiveBreakSettings {
         boolean isEnabled();
         boolean isDropItem();
+    }
+
+    interface IRequirements {
+        String getPermission();
+        List<String> getConditions();
+        String getDenyMessage();
+        String getLogic();
     }
 
     interface IRegionActions {
