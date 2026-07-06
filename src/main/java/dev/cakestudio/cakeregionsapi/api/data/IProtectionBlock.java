@@ -1,5 +1,7 @@
 package dev.cakestudio.cakeregionsapi.api.data;
 
+import dev.cakestudio.cakeregionsapi.api.manager.fuel.IFuelType;
+import dev.cakestudio.cakeregionsapi.api.manager.repair.IRepairItem;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 
@@ -16,6 +18,8 @@ public interface IProtectionBlock {
     List<String> getLore();
     boolean isPreventMetaModification();
     boolean isGlow();
+    String getEconomyProvider();
+    String getHologramEngine();
     double getPlaceCost();
     boolean isFuelSystemEnabled();
     int getFuelCreateValue();
@@ -26,6 +30,10 @@ public interface IProtectionBlock {
     Set<EntityType> getDefaultExplosions();
     Set<String> getDefaultCustomTnts();
     Map<String, String> getNbtData();
+
+    List<IFuelType> getFuelTypes();
+    List<IRepairItem> getRepairItems();
+    String getMemberAddMechanic();
 
     IHologramSettings getHologram();
     IDurabilitySettings getDurability();
