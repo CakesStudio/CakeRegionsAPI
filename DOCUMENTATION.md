@@ -27,7 +27,7 @@ if (api.isProtected(location)) {
 name: MyAwesomeAddon
 main: com.example.myaddon.MyAddon
 version: 1.0.0
-api-version: '1.0.0'       # Минимальная поддерживаемая версия CakeRegions API
+api-version: '2.0.0'       # Минимальная поддерживаемая версия CakeRegions API
 folia-supported: true      # Поддержка серверов Folia
 description: "Пример описания аддона"
 authors: [ "Developer" ]

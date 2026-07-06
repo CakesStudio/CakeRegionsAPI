@@ -1,7 +1,7 @@
 name: RegionsAddon
 main: dev.cakestudio.regionsaddon.RegionsAddon
 version: 1.0.0
-api-version: '1.0.0'
+api-version: '2.0.0'
 folia-supported: true
 description: "Example CakeRegions addon that reacts to region creation and handles custom items."
 authors: [ "CakeStudio" ]

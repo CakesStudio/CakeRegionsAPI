@@ -191,4 +191,39 @@ public interface IRegion {
     @NonNull
     Map<String, String> getTags();
 
+    // ========================
+    // Upgrades & Boosters
+    // ========================
+
+    int getRadiusUpgradeLevel();
+    void setRadiusUpgradeLevel(int level);
+    int getRadiusUpgradeBonus();
+
+    int getDurabilityUpgradeLevel();
+    void setDurabilityUpgradeLevel(int level);
+    int getDurabilityUpgradeBonus();
+
+    int getMembersUpgradeLevel();
+    void setMembersUpgradeLevel(int level);
+    int getMembersUpgradeBonus();
+
+    int getStorageUpgradeLevel();
+    void setStorageUpgradeLevel(int level);
+
+    String getStorageContents();
+    void setStorageContents(String base64);
+
+    @Nullable
+    org.bukkit.inventory.Inventory getStorageInventory();
+
+    @Nullable
+    Map<String, Long> getBoostersMap();
+    boolean hasActiveBooster(@NonNull String boosterId);
+    void activateBooster(@NonNull String boosterId, long durationSeconds);
+    void deactivateBooster(@NonNull String boosterId);
+    long getBoosterRemainingTime(@NonNull String boosterId);
+    boolean isBoosterEnabled(@NonNull String boosterId);
+    void setBoosterEnabled(@NonNull String boosterId, boolean enabled);
+    boolean isBoosterPermanent(@NonNull String boosterId);
+    void activatePermanentBooster(@NonNull String boosterId);
 }
