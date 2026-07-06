@@ -1,0 +1,101 @@
+package dev.cakestudio.cakeregionsapi.api.data;
+
+import org.bukkit.Material;
+import org.bukkit.entity.EntityType;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+public interface IProtectionBlock {
+    String getTypeId();
+    Material getMaterial();
+    int getRadius();
+    int getMaxMembers();
+    String getItemName();
+    List<String> getLore();
+    boolean isPreventMetaModification();
+    boolean isGlow();
+    double getPlaceCost();
+    boolean isFuelSystemEnabled();
+    int getFuelCreateValue();
+    Set<String> getAccessWorlds();
+    Set<EntityType> getDestroyExplosions();
+    Set<String> getDestroyCustomTnts();
+    boolean isExplosionDropItem();
+    Set<EntityType> getDefaultExplosions();
+    Set<String> getDefaultCustomTnts();
+    Map<String, String> getNbtData();
+
+    IHologramSettings getHologram();
+    IDurabilitySettings getDurability();
+    Map<String, IHeightLimit> getHeightLimits();
+    IPlacementRules getPlacementRules();
+    ICraftData getCraftData();
+    IInactiveBreakSettings getInactiveBreak();
+    IRegionActions getActions();
+    IRequirements getRequirements();
+
+    interface IHologramSettings {
+        boolean isEnabled();
+        double getOffsetY();
+        int getViewDistance();
+        boolean showToOthers();
+        String getHoloName();
+        List<String> getLines();
+    }
+
+    interface IDurabilitySettings {
+        boolean isEnabled();
+        int getInitial();
+        int getMax();
+        String getDisableValue();
+        Map<EntityType, Integer> getExplosionDamage();
+        Map<String, Integer> getCustomTntDamage();
+    }
+
+    interface IHeightLimit {
+        int getMin();
+        int getMax();
+    }
+
+    interface INearbyBlocks {
+        int getRadius();
+        Set<Material> getMaterials();
+    }
+
+    interface IPlacementRules {
+        Set<String> getAllowedBiomes();
+        Set<String> getForbiddenBiomes();
+        INearbyBlocks getRequire();
+        INearbyBlocks getForbid();
+    }
+
+    interface ICraftData {
+        boolean isEnabled();
+        List<String> getShape();
+        Map<String, String> getIngredients();
+    }
+
+    interface IInactiveBreakSettings {
+        boolean isEnabled();
+        boolean isDropItem();
+    }
+
+    interface IRequirements {
+        String getPermission();
+        List<String> getConditions();
+        String getDenyMessage();
+        String getLogic();
+    }
+
+    interface IRegionActions {
+        IActions getCreate();
+        IActions getBreakByPlayer();
+        IActions getBreakByDurability();
+        IActions getBreakByExplosion();
+        IActions getDurabilityDamage();
+        IActions getDurabilityRepair();
+    }
+
+}

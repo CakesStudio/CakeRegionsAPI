@@ -1,0 +1,3 @@
+enabled: true
+messages:
+  broadcast-create: "&a&l🛡 &fИгрок &b{player} &fсоздал новый регион &b{region} &fна координатах &e{x}, {y}, {z}&f!"

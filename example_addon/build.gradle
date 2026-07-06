@@ -1,0 +1,59 @@
+plugins {
+    id 'java'
+    id "io.github.goooler.shadow" version "8.1.8"
+}
+
+group = 'dev.cakestudio'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://repo.papermc.io/repository/maven-public/' }
+    maven { url = 'https://jitpack.io/' }
+    maven { url = 'https://repo.tcoded.com/releases' } // Folia
+}
+
+dependencies {
+    // CakeRegions API (Use the latest version https://jitpack.io/#CakesStudio/CakeRegionsAPI)
+    compileOnly 'com.github.CakesStudio:CakeRegionsAPI:v1.0.0'
+
+    // Paper API
+    compileOnly 'com.destroystokyo.paper:paper-api:1.16.5-R0.1-SNAPSHOT'
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok:1.18.42'
+    annotationProcessor 'org.projectlombok:lombok:1.18.42'
+    testCompileOnly "org.projectlombok:lombok:1.18.42"
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.42'
+
+    compileOnly "com.tcoded:FoliaLib:0.5.1" // Folia
+
+    // Adventure API
+    compileOnly 'net.kyori:adventure-platform-bukkit:4.4.1'
+    compileOnly 'net.kyori:adventure-text-minimessage:4.26.1'
+    compileOnly 'net.kyori:adventure-text-serializer-legacy:4.26.1'
+    compileOnly 'net.kyori:adventure-text-serializer-plain:4.26.1'
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(17)
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.jar {
+    enabled = false
+}
+
+tasks.shadowJar {
+    archiveFileName.set("RegionsAddon-${version}.jar")
+    destinationDirectory.set(layout.projectDirectory)
+
+    // Relocate to match CakeRegions internal structure
+    relocate 'net.kyori', 'dev.cakestudio.cakeregions.libs.kyori'
+    relocate 'com.tcoded.folialib', 'dev.cakestudio.cakeregions.libs.folialib'
+}
+
+build.dependsOn shadowJar
