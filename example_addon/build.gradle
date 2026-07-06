@@ -15,7 +15,7 @@ repositories {
 
 dependencies {
     // CakeRegions API (Use the latest version https://jitpack.io/#CakesStudio/CakeRegionsAPI)
-    compileOnly 'com.github.CakesStudio:CakeRegionsAPI:v2.0.0'
+    compileOnly 'com.github.CakesStudio:CakeRegionsAPI:2.0.0'
 
     // Paper API
     compileOnly 'com.destroystokyo.paper:paper-api:1.16.5-R0.1-SNAPSHOT'
