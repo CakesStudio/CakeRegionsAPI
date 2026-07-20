@@ -10,6 +10,9 @@ import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
 @Getter
+/**
+ * Called when a region is upgraded.
+ */
 public class RegionUpgradeEvent extends Event implements Cancellable {
 
     private static final HandlerList handlers = new HandlerList();

@@ -1,11 +1,13 @@
 package dev.cakestudio.cakeregionsapi.api.data;
 
 import org.bukkit.Location;
+import org.bukkit.inventory.ItemStack;
 
 import lombok.NonNull;
 
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
@@ -72,10 +74,6 @@ public interface IRegion {
     IPlayerPermissions getPermissions(@NonNull final UUID uuid);
 
     void setPermissions(@NonNull final UUID uuid, @NonNull final IPlayerPermissions permissions);
-
-    // ========================
-    // New methods
-    // ========================
 
     /**
      * Gets the remaining fuel time in seconds.
@@ -146,10 +144,6 @@ public interface IRegion {
     @NonNull
     Map<UUID, String> getMembersWithRoles();
 
-    // ========================
-    // Metadata / Tags
-    // ========================
-
     /**
      * Sets a custom metadata tag on this region.
      * Tags are persisted and can be used by addons to store arbitrary data.
@@ -191,33 +185,21 @@ public interface IRegion {
     @NonNull
     Map<String, String> getTags();
 
-    // ========================
-    // Upgrades & Boosters
-    // ========================
-
     int getRadiusUpgradeLevel();
     void setRadiusUpgradeLevel(int level);
     int getRadiusUpgradeBonus();
-
     int getDurabilityUpgradeLevel();
     void setDurabilityUpgradeLevel(int level);
     int getDurabilityUpgradeBonus();
-
     int getMembersUpgradeLevel();
     void setMembersUpgradeLevel(int level);
     int getMembersUpgradeBonus();
-
     int getStorageUpgradeLevel();
     void setStorageUpgradeLevel(int level);
-
     String getStorageContents();
     void setStorageContents(String base64);
-
-    @Nullable
-    org.bukkit.inventory.Inventory getStorageInventory();
-
-    @Nullable
-    Map<String, Long> getBoostersMap();
+    @Nullable List<ItemStack> getStorageItems();
+    @Nullable Map<String, Long> getBoostersMap();
     boolean hasActiveBooster(@NonNull String boosterId);
     void activateBooster(@NonNull String boosterId, long durationSeconds);
     void deactivateBooster(@NonNull String boosterId);
@@ -226,4 +208,5 @@ public interface IRegion {
     void setBoosterEnabled(@NonNull String boosterId, boolean enabled);
     boolean isBoosterPermanent(@NonNull String boosterId);
     void activatePermanentBooster(@NonNull String boosterId);
+
 }

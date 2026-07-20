@@ -2,6 +2,7 @@ package dev.cakestudio.cakeregionsapi.api.data;
 
 import dev.cakestudio.cakeregionsapi.api.manager.fuel.IFuelType;
 import dev.cakestudio.cakeregionsapi.api.manager.repair.IRepairItem;
+
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 
@@ -35,6 +36,8 @@ public interface IProtectionBlock {
     List<IRepairItem> getRepairItems();
     String getMemberAddMechanic();
 
+    IDynamicDurabilitySettings getDynamicDurability();
+    IRaidProtectionSettings getRaidProtection();
     IHologramSettings getHologram();
     IDurabilitySettings getDurability();
     Map<String, IHeightLimit> getHeightLimits();
@@ -43,6 +46,21 @@ public interface IProtectionBlock {
     IInactiveBreakSettings getInactiveBreak();
     IRegionActions getActions();
     IRequirements getRequirements();
+
+    interface IDynamicDurabilitySettings {
+        boolean isEnabled();
+        String getBonusType();
+        int getRadius();
+        int getMaxBonus();
+        Map<Material, Integer> getBlocks();
+    }
+
+    interface IRaidProtectionSettings {
+        boolean isEnabled();
+        int getStartHour();
+        int getEndHour();
+        String getMessage();
+    }
 
     interface IHologramSettings {
         boolean isEnabled();

@@ -12,7 +12,7 @@ import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * Called when a raid on a region is detected (first damage from a non-member).
+ * Called when a raid on a region is detected(first damage from a non-member).
  * This event is informational and not cancellable.
  */
 @Getter

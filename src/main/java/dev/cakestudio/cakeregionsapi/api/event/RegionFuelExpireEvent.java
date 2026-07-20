@@ -9,8 +9,8 @@ import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
 /**
- * Called when a region's fuel has expired (reached zero).
- * This event is not cancellable — the fuel has already run out.
+ * Called when a region's fuel has expired(reached zero).
+ * This event is not cancellable - the fuel has already run out.
  */
 @Getter
 public class RegionFuelExpireEvent extends Event {

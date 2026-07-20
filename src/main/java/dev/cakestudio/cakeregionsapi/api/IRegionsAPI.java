@@ -39,7 +39,7 @@ import java.util.concurrent.CompletableFuture;
 
 /**
  * Main API interface for CakeRegionsPlus.
- * Provides methods for managing protection blocks, regions, players, holograms, and commands.
+ * Provides methods for managing protection blocks, regions, players, holograms, commands...
  */
 public interface IRegionsAPI {
 

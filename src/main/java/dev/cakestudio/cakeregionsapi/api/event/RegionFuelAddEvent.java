@@ -12,9 +12,6 @@ import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.inventory.ItemStack;
 
-/**
- * Called when a player adds fuel to a region.
- */
 @Getter
 public class RegionFuelAddEvent extends Event implements Cancellable {
 

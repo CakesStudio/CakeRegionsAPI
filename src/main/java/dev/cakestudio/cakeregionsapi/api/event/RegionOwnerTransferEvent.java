@@ -14,7 +14,7 @@ import org.bukkit.event.HandlerList;
 import java.util.UUID;
 
 /**
- * Called when the creator (owner) of a region is being transferred to another player.
+ * Called when the creator(owner) of a region is being transferred to another player.
  */
 @Getter
 public class RegionOwnerTransferEvent extends Event implements Cancellable {

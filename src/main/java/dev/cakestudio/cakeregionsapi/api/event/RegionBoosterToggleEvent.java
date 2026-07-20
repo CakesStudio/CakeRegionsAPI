@@ -10,7 +10,7 @@ import org.bukkit.event.HandlerList;
 import lombok.NonNull;
 
 /**
- * Fired when a player toggles (enables or disables) an active region booster.
+ * Called when a player toggles(enables or disables) an active region booster.
  */
 @Getter
 public class RegionBoosterToggleEvent extends Event implements Cancellable {
