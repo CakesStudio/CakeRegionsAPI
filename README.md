@@ -57,7 +57,7 @@ dependencies {
     </dependency>
 </dependencies>
 ```
-*(Замените `VERSION` на целевой релиз, например, `v2.0.1`)*
+*(Замените `VERSION` на целевой релиз, например, `v2.0.2`)*
 
 <br/>
 
