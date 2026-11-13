@@ -1,5 +1,8 @@
 jdk:
-  - temurin21
+  - openjdk21
+
+before_install:
+  - chmod +x gradlew
 
 install:
-  - ./gradlew publishToMavenLocal -Pgroup=com.github.CakesStudio
+  - ./gradlew --no-daemon clean publishToMavenLocal -x test -Pgroup=com.github.CakesStudio

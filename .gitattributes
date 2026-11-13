@@ -1,0 +1,5 @@
+# Keep the standalone API wrapper portable between Windows and WSL.
+gradlew text eol=lf
+gradlew.bat text eol=crlf
+*.gradle text eol=lf
+*.properties text eol=lf

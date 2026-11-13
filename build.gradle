@@ -1,10 +1,10 @@
 plugins {
     id 'java-library'
-    id "io.github.goooler.shadow" version "8.1.8"
+    id "com.gradleup.shadow" version "9.4.2"
     id 'maven-publish'
 }
 
-group = 'dev.cakestudio'
+group = providers.gradleProperty('group').getOrElse('dev.cakestudio')
 version = '2.0.3'
 
 repositories {
