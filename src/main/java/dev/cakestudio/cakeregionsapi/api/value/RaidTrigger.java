@@ -7,6 +7,9 @@ import lombok.NonNull;
 public enum RaidTrigger {
     BLOCK_BREAK("block-break"),
     TNT_EXPLOSION("tnt-explosion"),
+    WIND_CHARGE("wind-charge"),
+    WIND_BURST("wind-burst"),
+    OTHER_EXPLOSION("other-explosion"),
     REGION_ENTER("region-enter"),
     TURRET_TARGET("turret-target");
 

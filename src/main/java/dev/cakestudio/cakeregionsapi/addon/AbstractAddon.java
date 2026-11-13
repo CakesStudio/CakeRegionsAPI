@@ -187,39 +187,23 @@ public abstract class AbstractAddon {
      */
     protected void closeOpenedMenus() {
         WeakReference<ClassLoader> myLoaderRef = new WeakReference<>(this.classLoader);
-
+        var plugin = getApi().getPlugin();
+        var folia = getApi().getFoliaLib();
         for (Player player : Bukkit.getOnlinePlayers()) {
-            try {
-                Inventory topInv = player.getOpenInventory().getTopInventory();
+            Runnable close = () -> {
                 ClassLoader myLoader = myLoaderRef.get();
-
-                if (myLoader != null && topInv != null) {
-                    InventoryHolder holder = topInv.getHolder();
-                    if (holder != null && holder.getClass().getClassLoader() == myLoader) {
-                        player.closeInventory();
-                    }
+                Inventory inventory = player.getOpenInventory().getTopInventory();
+                InventoryHolder holder = inventory.getHolder();
+                if (myLoader != null && holder != null && holder.getClass().getClassLoader() == myLoader) {
+                    player.closeInventory();
                 }
-            } catch (Exception ignored) {}
-        }
-
-        if (!getApi().getPlugin().isEnabled()) return;
-
-        getApi().getFoliaLib().getScheduler().runLaterAsync(() -> {
-            ClassLoader myLoader = myLoaderRef.get();
-            if (myLoader == null) return;
-
-            for (Player player : Bukkit.getOnlinePlayers()) {
-                try {
-                    Inventory topInv = player.getOpenInventory().getTopInventory();
-                    if (topInv != null) {
-                        InventoryHolder holder = topInv.getHolder();
-                        if (holder != null && holder.getClass().getClassLoader() == myLoader) {
-                            player.closeInventory();
-                        }
-                    }
-                } catch (Exception ignored) {}
+            };
+            if (plugin.isEnabled()) {
+                folia.getScheduler().runAtEntity(player, task -> close.run());
+            } else if (!folia.isFolia() || folia.getScheduler().isOwnedByCurrentRegion(player)) {
+                close.run();
             }
-        }, 2L);
+        }
     }
 
     /**
