@@ -67,3 +67,12 @@ publishing {
         mavenLocal()
     }
 }
+
+tasks.named('compileJava', JavaCompile) {
+    sourceCompatibility = '16'
+    targetCompatibility = '16'
+}
+
+configurations.matching { it.name in ['compileClasspath', 'runtimeClasspath', 'apiElements', 'runtimeElements'] }.configureEach {
+    attributes.attribute(org.gradle.api.attributes.java.TargetJvmVersion.TARGET_JVM_VERSION_ATTRIBUTE, 21)
+}
